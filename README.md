@@ -61,17 +61,58 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 ## Getting Started
 
 ### Prerequisites
-- **JDK 21**  
-- **Maven 3.9+**  
+- **JDK 21**  
+- **Maven 3.9+**  
 - **Git**  
-- (Optional) **Docker** if you prefer containerized runs
+- (Optional) **Docker** if you prefer containerized runs  
 
 ### 1️⃣ Clone
-```bash
+~~~bash
 git clone https://github.com/your-handle/ArrayOfHope.git
 cd ArrayOfHope
+~~~
+
 ### 2️⃣ Backend Setup
-```bash
+~~~bash
 cd backend
 mvn clean package
 mvn spring-boot:run
+~~~
+The API now lives at **http://localhost:8080**. Access docs at **/swagger-ui.html**.
+
+### 3️⃣ Frontend Setup
+~~~bash
+cd desktop
+mvn clean package
+java -jar target/ArrayOfHope-desktop.jar
+~~~
+## Project Structure
+ArrayOfHope/
+├── backend/                     
+│   ├── src/main/java/com/arrayofhope/backend
+│   │   ├── config/              # Security & DB configs
+│   │   ├── controller/          # REST endpoints
+│   │   ├── service/             # Business logic
+│   │   ├── repository/          # JPA repositories
+│   │   └── BackendApplication.java
+│   └── src/main/resources/
+│       └── application.properties
+├── desktop/                     
+│   └── src/main/java/
+│       ├── ui/auth/             # Login, Register, ForgotPwd
+│       ├── ui/main/             # Dashboards
+│       ├── ui/views/            # PostJob, ViewJobs...
+│       ├── data/                # DAO (JDBC)
+│       ├── model/               # POJOs
+│       ├── util/                # SessionManager, Helpers
+│       └── Main.java
+├── resumes/                     # Uploaded files
+└── README.md
+
+## Running the App
+
+| Environment | Command                                           | Notes                                      |
+|-------------|---------------------------------------------------|-------------------------------------------|
+| **Dev**     | `mvn spring-boot:run` + `java -jar desktop.jar`   | Runs backend + frontend locally           |
+| **Docker**  | `docker compose up`                               | Builds backend image + mounts DB          |
+| **Prod**    | Build JARs & deploy backend to Render/Fly.io; run desktop JAR | Compatible with free tiers       |
