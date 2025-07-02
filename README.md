@@ -1,4 +1,4 @@
-# Array of Hope — Job Finder 🔍💼
+i nee# Array of Hope — Job Finder 🔍💼
 
 A full-stack **Java** job-portal application that lets employers post jobs, applicants search & apply, and admins keep everything running smoothly.  
 Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite) and designed to be **production-ready**, secure, and easy to extend.
@@ -87,27 +87,32 @@ mvn clean package
 java -jar target/ArrayOfHope-desktop.jar
 ~~~
 ## Project Structure
+
+```bash
 ArrayOfHope/
-├── backend/                     
+├── backend/                         # Spring Boot project (API + Security)
 │   ├── src/main/java/com/arrayofhope/backend
-│   │   ├── config/              # Security & DB configs
-│   │   ├── controller/          # REST endpoints
-│   │   ├── service/             # Business logic
-│   │   ├── repository/          # JPA repositories
-│   │   └── BackendApplication.java
+│   │   ├── config/                  # Security and DB config
+│   │   ├── controller/              # REST API endpoints
+│   │   ├── service/                 # Business logic
+│   │   ├── repository/              # Data access layer (JPA repositories)
+│   │   └── BackendApplication.java  # Main backend app class
 │   └── src/main/resources/
-│       └── application.properties
-├── desktop/                     
+│       └── application.properties   # DB and app settings
+│
+├── desktop/                         # Java Swing client (UI)
 │   └── src/main/java/
-│       ├── ui/auth/             # Login, Register, ForgotPwd
-│       ├── ui/main/             # Dashboards
-│       ├── ui/views/            # PostJob, ViewJobs...
-│       ├── data/                # DAO (JDBC)
-│       ├── model/               # POJOs
-│       ├── util/                # SessionManager, Helpers
-│       └── Main.java
-├── resumes/                     # Uploaded files
-└── README.md
+│       ├── ui/auth/                 # Login, Register, Forgot Password screens
+│       ├── ui/main/                 # Dashboards for Admins and Users
+│       ├── ui/views/                # Post, View, Filter, Apply to jobs
+│       ├── data/                    # DAOs (JDBC for SQLite)
+│       ├── model/                   # POJO classes (Job, User, Application)
+│       ├── util/                    # SessionManager, helpers
+│       └── Main.java                # Main launcher class
+│
+├── resumes/                         # Uploaded resume files
+└── README.md                        # This file
+```
 
 ## Running the App
 
