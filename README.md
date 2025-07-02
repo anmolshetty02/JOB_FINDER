@@ -39,3 +39,73 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 ---
 
 ## Architecture
+
+> **Desktop UI** runs locally as a JAR; it calls the **Spring Boot** backend (also local or cloud-hosted), which persists data in **SQLite**. Separation keeps the UI snappy while letting the backend scale or move to the cloud later.
+
+---
+
+## Tech Stack
+| Layer        | Technology                       | Why?                                   |
+|--------------|----------------------------------|----------------------------------------|
+| UI           | Java Swing (JDK 21)              | Native desktop look, zero browser lag  |
+| State Mgmt   | Custom MVC + Observer pattern    | Lightweight, no external libs          |
+| Backend      | Spring Boot 3, Spring Security   | Rapid REST APIs, robust auth           |
+| DB           | SQLite 3 (JDBC)                  | Serverless, portable                   |
+| AuthN/AuthZ  | JWT, BCrypt                      | Stateless, secure                      |
+| Testing      | JUnit 5, Mockito                 | Unit/integ tests                       |
+| Docs         | Swagger-UI (springdoc-openapi)   | Live API playground                    |
+
+---
+
+## Getting Started
+
+<details>
+<summary><strong>Prerequisites</strong></summary>
+
+* **JDK 21**  
+* **Maven 3.9+**  
+* **Git**  
+* (Optional) **Docker** if you prefer containerized runs
+</details>
+
+### 1️⃣ Clone
+```bash
+git clone https://github.com/your-handle/ArrayOfHope.git
+cd ArrayOfHope
+
+2.Backend Setup
+
+cd backend
+# Install deps & build
+mvn clean package
+# Run with hot-reload
+mvn spring-boot:run
+
+3.Front end
+cd desktop
+mvn clean package
+# Launch the Swing app
+java -jar target/ArrayOfHope-desktop.jar
+
+Strcture
+ArrayOfHope/
+├── backend/                     # Spring Boot project
+│   ├── src/main/java/com/arrayofhope/backend
+│   │   ├── config/              # Security & DB configs
+│   │   ├── controller/          # REST endpoints
+│   │   ├── service/             # Business logic
+│   │   ├── repository/          # JPA repositories
+│   │   └── BackendApplication.java
+│   └── src/main/resources/
+│       └── application.properties
+├── desktop/                     # Java Swing client
+│   └── src/main/java/
+│       ├── ui/auth/             # Login, Register, ForgotPwd
+│       ├── ui/main/             # Dashboards
+│       ├── ui/views/            # PostJob, ViewJobs...
+│       ├── data/                # DAO (JDBC)
+│       ├── model/               # POJOs
+│       ├── util/                # SessionManager, Helpers
+│       └── Main.java
+├── resumes/                     # Uploaded files
+└── README.md
