@@ -3,9 +3,9 @@
 A full-stack **Java** job-portal application that lets employers post jobs, applicants search & apply, and admins keep everything running smoothly.  
 Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite) and designed to be **production-ready**, secure, and easy to extend.
 
-![Java](https://img.shields.io/badge/Java-21-blue?logo=java)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?logo=spring)
-![SQLite](https://img.shields.io/badge/SQLite-3.x-lightgrey?logo=sqlite)
+![Java](https://img.shields.io/badge/Java-21-blue?logo=java)  
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?logo=spring)  
+![SQLite](https://img.shields.io/badge/SQLite-3.x-lightgrey?logo=sqlite)  
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 
 ---
@@ -21,7 +21,7 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 8. [Testing](#testing)  
 9. [Roadmap](#roadmap)  
 10. [Contributing](#contributing)  
-11. [License](#license)  
+11. [License](#license)
 
 ---
 
@@ -34,7 +34,7 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 - **Custom Data Structures** — `ArrayBag<T>`, Priority Queues, Sorting utilities.
 - **Self-Contained DB** — Lightweight SQLite for zero-config local setup.
 - **API Docs** — Interactive Swagger UI at `/swagger-ui.html`.
-- **100 % Free to Run** — No paid services; deployable on free tiers (Render, Fly.io, etc.).
+- **100 % Free to Run** — No paid services; deployable on free tiers (Render, Fly.io, etc.).
 
 ---
 
@@ -45,6 +45,7 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 ---
 
 ## Tech Stack
+
 | Layer        | Technology                       | Why?                                   |
 |--------------|----------------------------------|----------------------------------------|
 | UI           | Java Swing (JDK 21)              | Native desktop look, zero browser lag  |
@@ -59,53 +60,13 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 
 ## Getting Started
 
-<details>
-<summary><strong>Prerequisites</strong></summary>
-
-* **JDK 21**  
-* **Maven 3.9+**  
-* **Git**  
-* (Optional) **Docker** if you prefer containerized runs
-</details>
+### Prerequisites
+- **JDK 21**  
+- **Maven 3.9+**  
+- **Git**  
+- (Optional) **Docker** if you prefer containerized runs
 
 ### 1️⃣ Clone
 ```bash
 git clone https://github.com/your-handle/ArrayOfHope.git
 cd ArrayOfHope
-
-2.Backend Setup
-
-cd backend
-# Install deps & build
-mvn clean package
-# Run with hot-reload
-mvn spring-boot:run
-
-3.Front end
-cd desktop
-mvn clean package
-# Launch the Swing app
-java -jar target/ArrayOfHope-desktop.jar
-
-Strcture
-ArrayOfHope/
-├── backend/                     # Spring Boot project
-│   ├── src/main/java/com/arrayofhope/backend
-│   │   ├── config/              # Security & DB configs
-│   │   ├── controller/          # REST endpoints
-│   │   ├── service/             # Business logic
-│   │   ├── repository/          # JPA repositories
-│   │   └── BackendApplication.java
-│   └── src/main/resources/
-│       └── application.properties
-├── desktop/                     # Java Swing client
-│   └── src/main/java/
-│       ├── ui/auth/             # Login, Register, ForgotPwd
-│       ├── ui/main/             # Dashboards
-│       ├── ui/views/            # PostJob, ViewJobs...
-│       ├── data/                # DAO (JDBC)
-│       ├── model/               # POJOs
-│       ├── util/                # SessionManager, Helpers
-│       └── Main.java
-├── resumes/                     # Uploaded files
-└── README.md
