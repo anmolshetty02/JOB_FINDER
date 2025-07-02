@@ -153,9 +153,9 @@ Please include clear descriptions of what your PR does and why. ❤️
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
-You are free to use, modify, and distribute it for personal or commercial use — just give credit where it’s due.
+This project is open for anyone to use, modify, and learn from.  
+There is no warranty or guarantee of any kind — use it at your own risk.  
+I take no responsibility for any issues or outcomes resulting from its use.
 
 ---
 
