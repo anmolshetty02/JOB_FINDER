@@ -70,3 +70,8 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 ```bash
 git clone https://github.com/your-handle/ArrayOfHope.git
 cd ArrayOfHope
+### 2️⃣ Backend Setup
+```bash
+cd backend
+mvn clean package
+mvn spring-boot:run
