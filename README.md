@@ -66,7 +66,41 @@ Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite
 - **Git**  
 - (Optional) **Docker** if you prefer containerized runs
 
+###Project Structure  
+  ArrayOfHope/
+├── backend/                     
+│   ├── src/main/java/com/arrayofhope/backend
+│   │   ├── config/              # Security & DB configs
+│   │   ├── controller/          # REST endpoints
+│   │   ├── service/             # Business logic
+│   │   ├── repository/          # JPA repositories
+│   │   └── BackendApplication.java
+│   └── src/main/resources/
+│       └── application.properties
+├── desktop/                     
+│   └── src/main/java/
+│       ├── ui/auth/             # Login, Register, ForgotPwd
+│       ├── ui/main/             # Dashboards
+│       ├── ui/views/            # PostJob, ViewJobs...
+│       ├── data/                # DAO (JDBC)
+│       ├── model/               # POJOs
+│       ├── util/                # SessionManager, Helpers
+│       └── Main.java
+├── resumes/                     # Uploaded files
+└── README.md
+
 ### 1️⃣ Clone
 ```bash
 git clone https://github.com/your-handle/ArrayOfHope.git
 cd ArrayOfHope
+---
+cd backend
+mvn clean package
+mvn spring-boot:run
+---
+cd desktop
+mvn clean package
+java -jar target/ArrayOfHope-desktop.jar
+---
+
+
