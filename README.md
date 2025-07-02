@@ -1,4 +1,4 @@
-i nee# Array of Hope — Job Finder 🔍💼
+# Array of Hope — Job Finder 🔍💼
 
 A full-stack **Java** job-portal application that lets employers post jobs, applicants search & apply, and admins keep everything running smoothly.  
 Built entirely with **free, open-source tools** (Java Swing, Spring Boot, SQLite) and designed to be **production-ready**, secure, and easy to extend.
@@ -121,3 +121,42 @@ ArrayOfHope/
 | **Dev**     | `mvn spring-boot:run` + `java -jar desktop.jar`   | Runs backend + frontend locally           |
 | **Docker**  | `docker compose up`                               | Builds backend image + mounts DB          |
 | **Prod**    | Build JARs & deploy backend to Render/Fly.io; run desktop JAR | Compatible with free tiers       |
+
+## Roadmap
+
+Here are some features and improvements planned for future versions:
+
+- [ ] 🔄 Migrate DB layer to Spring Data JDBC
+- [ ] 📧 Add email notifications (e.g., job status, application updates)
+- [ ] 📤 Export job listings to CSV / PDF
+- [ ] 🔐 Add two-factor authentication (2FA)
+- [ ] 🔁 Scheduled job cleanup using Quartz or built-in scheduler
+- [ ] ⚙️ Set up GitHub Actions for CI/CD builds
+
+---
+
+## Contributing
+
+We welcome contributions from the community!
+
+### How to Contribute:
+1. **Fork** the repo and clone it locally.
+2. Create a **new branch**: `git checkout -b feature/my-feature`
+3. Make your changes, ensuring `mvn test` passes.
+4. Commit using [Conventional Commits](https://www.conventionalcommits.org/):  
+   Example: `feat: add resume parser for admin view`
+5. Push and submit a **Pull Request** (PR).
+
+Please include clear descriptions of what your PR does and why. ❤️
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+You are free to use, modify, and distribute it for personal or commercial use — just give credit where it’s due.
+
+---
+
+
